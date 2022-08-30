@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 //import NavBar from './componentes/NavBar'
 import ItemListContainer from './componentes/ItemListContainer';
 import NavBoost from './componentes/NavBoost';
+import ItemCount from './componentes/ItemCount';
 
 function App() {
   const saludo = 'Bienvenidos'
@@ -12,7 +13,10 @@ function App() {
     <>
       <NavBoost/>
       <h2> </h2>
-       <ItemListContainer saludo={saludo} greeting ='Elige tu Producto' />
+      <ItemCount/>
+      <ItemListContainer saludo={saludo} greeting ='Elige tu Producto' />
+    
+
     </>
   );
      

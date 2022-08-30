@@ -1,9 +1,10 @@
-import React from 'react'
-
+import React, {useEffect, useState} from 'react'
+import ItemList from './ItemList'
+import productos from './productos'
 const ItemListContainer = ({saludo, greeting}) => {
-   // console.log(props)  
+   console.log(productos)  
    //const{saludo}= props se usa cuando son pocas
-
+  
   return (
     <div>
         <p>{saludo}</p>
