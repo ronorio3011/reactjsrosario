@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react'
 
 function ItemCount() {
- //let numero = 10
+ //let stock = 5
  const [contador, setContador] = useState(1)
  const [cambioCategoria, setCambioCategoria] = useState(false)
- const increase = () =>{
-    setContador (contador + 1)
+ const sumar = () =>{
+    if(contador < 10){
+    setContador (contador + 1);
+    }
  }
-  const decrease = () =>{
+  const restar = () =>{
+    if(contador > 0){
     setContador (contador -1)
+    }
   }
 
    const  AgregarAlCarrito =() =>{
@@ -25,8 +29,8 @@ function ItemCount() {
     <div>
         <h3>Contador</h3>
         <p> {contador}</p>
-        <button onClick={decrease}>-</button>
-        <button onClick={increase}>+</button>
+        <button onClick={restar}>-</button>
+        <button onClick={sumar}>+</button>
         <br />
         <button onClick={AgregarAlCarrito}> Agregar al Carrito</button>
         
