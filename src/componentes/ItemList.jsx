@@ -8,9 +8,13 @@ const ItemList = ({listProducts}) => {
     <>
     {listProducts.map(product=> <Item 
     key={product.id}
-    product={product}/>)}
+    product={product}/>
+    )}
     </>
+    
+    
   )
+  
 }
 
 export default ItemList
