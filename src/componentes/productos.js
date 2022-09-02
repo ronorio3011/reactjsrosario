@@ -11,7 +11,7 @@ const productos = [
         nombre: "Pechugas",
         precio: "$1099",
         detail: "Pechuga de pollo deshuesada el kg",
-        img: "https://ibb.co/tK84DqF"   
+        img: "https://i.ibb.co/LRn81xH/pechugas.webp"   
 
     },
     {
@@ -19,14 +19,14 @@ const productos = [
         nombre: "Pollo",
         precio: "$649",
         detail: "Pollo entero por kg",
-        img: "https://ibb.co/4srBZpb"
+        img: "https://i.ibb.co/bH9pgX4/pollo.jpg"
     },
     {
         id:4,
         nombre: "Papas Fritas",
         precio: "$550",
         detail: "Papas Fritas Mc Cain congeladas",
-        img: ""
+        img: "https://i.ibb.co/kmBGFPf/papas-MC-Cain.jpg"
     }
 
 ];
