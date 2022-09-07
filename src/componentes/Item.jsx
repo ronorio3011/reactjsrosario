@@ -3,6 +3,7 @@ import '../App.css';
 
 
 const Item = ({product, i}) => {
+
   return (
     <div style={{padding:'5rem', margin:'3rem'}}>
       <p>{product.id}</p>

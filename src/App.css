@@ -2,6 +2,17 @@
   text-align: center;
 }
 
+.cardConteiner{
+  display: flex;
+  justify-content: space-around;
+  background-image: url();
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
