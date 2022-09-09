@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import CartWidget from './CartWidget'
+import {NavLink} from 'react-router-dom'
 
 function NavBoost() {
   return (
@@ -13,22 +14,17 @@ function NavBoost() {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Historia</a>
+          <NavLink className="nav-link active" aria-current="page" to='/categoria/:categoriaId/Pollo'>Pollo</NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Galeria</a>
+          <NavLink className="nav-link active" aria-current="page" to='/categoria/:categoriaId/Congelados'>Congelados</NavLink>
         </li>
-        <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Productos
-          </a>
-          <ul className="dropdown-menu">
-            <li><a className="dropdown-item" href="#">Action</a></li>
-            <li><a className="dropdown-item" href="#">Another action</a></li>
-            <li><hr className="dropdown-divider"/></li>
-            <li><a className="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>   
+         <li className="nav-item">
+          <NavLink className="nav-link active" aria-current="page" to='/categoria/:categoriaId/Arrollados'>Arrollados</NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link active" aria-current="page" to='/categoria/:categoriaId/Papas'>Papas</NavLink>
+        </li>
       </ul>
         <CartWidget counter={10}/>
     </div>

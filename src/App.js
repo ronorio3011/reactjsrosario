@@ -16,7 +16,8 @@ function App() {
       <NavBoost/>
          <Routes> 
           <Route path= '/' eLement={<ItemListContainer saludo={saludo}  greeting='Elige tu Producto' />}/>
-          <Route path= '/detalle' eLement={ItemDetailConteiner}  ></Route>
+          <Route path= '/categoria/:categoriaId' eLement={<ItemListContainer saludo={saludo}  greeting='Elige tu Producto' />}/>
+          <Route path= '/detalle/:id' eLement={ItemDetailConteiner}  ></Route>
          </Routes>
       <ItemCount/>
       
