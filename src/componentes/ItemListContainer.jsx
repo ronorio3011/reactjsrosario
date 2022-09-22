@@ -1,56 +1,37 @@
 import React, {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
-import { customFetch } from './customFetch'
+//import { customFetch } from './customFetch'
 import ItemList from './ItemList'
-import productos from './productos'
+//import productos from './productos'
+import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore'
 
 
 
+export default function ItemListContainer(){
 
-const ItemListContainer = ({saludo, greeting}) => {
+  const [products, setProducts] = useState([])
+  const {categoriaId} =useParams(); 
 
-  //console.log(productos)  
-  //console.log(productos[1].id)  
-  //const{saludo}= props se usa cuando son pocas
-  
-    const [listProducts, setListProducts]= useState([])
-    const  [loading, setLoading]= useState(false)
-    const{categoriaId}= useParams()
+  useEffect(()=>{
+    const db = getFirestore()
+  // si estoy en home o ruta sin parametro definido
+  if (categoriaId == undefined){
+    const miCollection = collection(db, "products");
+    getDocs(miCollection).then((data) =>{
+        const auxProducts = data.docs.map((product) => ({  ...product.data(), id: product.id,
+     }));
+     setProducts(auxProducts);
+  }); 
+  }
+  else{
+    const miCollection = query (collection(db, "products"), where("categoriaId", "==", categoriaId));
+    getDocs(miCollection).then((data) =>{
+        const auxProducts = data.docs.map((product) => ({  ...product.data(), id: product.id,
+     }));
+     setProducts(auxProducts);
+  }); 
+  }
+  }, []);
 
-
-    console.log('categorias:', categoriaId)
-    
-
-
-useEffect (()=>{
-   setLoading(true)
-   productos
-   .then((res)=> {
-    if(categoriaId){
-      setListProducts(res.filter((item)=> item.category === categoriaId))
-
-    }else{
-      setListProducts(res)
-    }
-   })
-   .catch((error)=> console.log(error))
-   .finally(()=> setLoading(false))
-
-}, [categoriaId]) 
- 
-console.log(listProducts)
-
-
-  return (
-    <>
-    <ItemList listProducts={listProducts}/>
-
-    <div>
-        <p>{saludo}</p>
-        <p>{greeting}</p>
-    </div>
-    </>
-  )
+  return <div> <ItemList products={products}/> </div>;
 }
-
-export default ItemListContainer

@@ -1,26 +1,26 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import ItemDetail from './ItemDetail'
-import productos from './productos'
+////import React, { useEffect, useState } from 'react'
+////import { useParams } from 'react-router-dom'
+////import ItemDetail from './ItemDetail'
+////import productos from './productos'
 
-const ItemDetailConteiner = () => {
-    const [productDetail, setProductDetail]= useState({})
-    const [loading, setLoading]= useState(true)
-    const{id}=useParams()
-
-    useEffect(() => {
-      productos
-        .then((res)=> setProductDetail(res.find((item)=> item.id === 'id')))
-        .catch((error)=> console.log(error))
-        .finally(()=> setLoading(false))
-    }, [id])
+////const ItemDetailConteiner = () => {
+ ////   const [productDetail, setProductDetail]= useState({})
+  ////  const [loading, setLoading]= useState(true)
+  ////  const{id}=useParams()
+////
+  ////  useEffect(() => {
+   ////   productos
+   ////     .then((res)=> setProductDetail(res.find((item)=> item.id === 'id')))
+   ////     .catch((error)=> console.log(error))
+  ////      .finally(()=> setLoading(false))
+   //// }, [id])
     
-    console.log('detalle', productDetail)
-  return (
-    <div>
-        {loading ? <p>Cargando...</p> : <ItemDetail productDetail={productDetail }/>}
-    </div>
-  )
-}
+   //// console.log('detalle', productDetail)
+ //// return (
+  //  <div>
+   //     {loading ? <p>Cargando...</p> : <ItemDetail productDetail=//{productDetail }/>}
+  //  </div>
+ // )
+//}
 
-export default ItemDetailConteiner
+//export default ItemDetailConteiner
