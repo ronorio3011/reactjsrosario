@@ -17,11 +17,7 @@ export default function ItemListContainer(){
   // si estoy en home o ruta sin parametro definido
   if (categoriaId == undefined){
     const miCollection = collection(db, "products");
-    getDocs(miCollection).then((data) =>{
-        const auxProducts = data.docs.map((product) => ({  ...product.data(), id: product.id,
-     }));
-     setProducts(auxProducts);
-  }); 
+    
   }
   else{
     const miCollection = query (collection(db, "products"), where("categoriaId", "==", categoriaId));
@@ -31,7 +27,17 @@ export default function ItemListContainer(){
      setProducts(auxProducts);
   }); 
   }
-  }, []);
+  }, [categoriaId]);
+ 
+ useEffect(() => {
+   
+ console.log(products)
+   
+
+
+ }, [products])
+ 
+
 
   return <div> <ItemList products={products}/> </div>;
 }

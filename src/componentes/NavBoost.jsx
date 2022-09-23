@@ -14,16 +14,16 @@ function NavBoost() {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <NavLink className="nav-link active" aria-current="page" to='/categoria/:categoriaId/Pollo'>Pollo</NavLink>
+          <NavLink className="nav-link active" aria-current="page" to='/categoria/Pollo'>Pollo</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link active" aria-current="page" to='/categoria/:categoriaId/Congelados'>Congelados</NavLink>
+          <NavLink className="nav-link active" aria-current="page" to='/categoria/Congelados'>Congelados</NavLink>
         </li>
          <li className="nav-item">
-          <NavLink className="nav-link active" aria-current="page" to='/categoria/:categoriaId/Arrollados'>Arrollados</NavLink>
+          <NavLink className="nav-link active" aria-current="page" to='/categoria/Arrollados'>Arrollados</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link active" aria-current="page" to='/categoria/:categoriaId/Papas'>Papas</NavLink>
+          <NavLink className="nav-link active" aria-current="page" to='/categoria/Papas'>Papas</NavLink>
         </li>
       </ul>
         <CartWidget counter={10}/>

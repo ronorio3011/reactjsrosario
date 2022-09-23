@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import ItemListContainer from './componentes/ItemListContainer';
 import NavBoost from './componentes/NavBoost';
 import ItemCount from './componentes/ItemCount';
-import ItemDetailConteiner from './componentes/ItemDetailConteiner';
+import ItemDetailContainer from './componentes/ItemDetailContainer';
 import Checkout from './componentes/Checkout';
 import Cart from './componentes/Cart';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
@@ -17,11 +17,11 @@ function App() {
     <BrowserRouter>
       <NavBoost/>
       <Routes>
-        <Route path="/" eLement= {<ItemListContainer/>} />
+        <Route path="/" element= {<ItemListContainer/>} />
         <Route path="/categoria/:categoriaId" eLement= {<ItemListContainer/>} />
-        <Route path="/item/:idItem" eLement= {<ItemDetailConteiner/>} />
-        <Route path="/checkout" eLement= {<Checkout/>} />
-        <Route path="/cart" eLement= {<Cart/>} /> 
+        <Route path="/item/:idItem" element= {<ItemDetailContainer/>} />
+        <Route path="/checkout" element= {<Checkout/>} />
+        <Route path="/cart" element= {<Cart/>} /> 
       </Routes>
     </BrowserRouter>
     </>
